@@ -33,3 +33,4 @@ node {
       sh "docker save parcelservice-proxy > proxy.tar"
       sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no proxy.tar vagrant@192.168.56.100:/home/vagrant/images"
    }
+}
