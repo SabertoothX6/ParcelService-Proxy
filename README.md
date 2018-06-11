@@ -1,6 +1,5 @@
 # ParcelService-Proxy
-
-this is a more  than quick and dirty try to use a LoadBalancer in this case a HAProxy
+This is a more  than quick and dirty try to use a LoadBalancer. In this case a HAProxy
 
 ## build docker image
 ```sh
