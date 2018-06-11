@@ -35,6 +35,6 @@ node {
    }
    stage('Start LoadBalancer')
    {
-      sh " docker run -d -p 80:80 --restart always --network=ParcelService --name=proxy parcelservice-proxy"
+      sh " docker run -d -p 80:80 --restart always --name=proxy parcelservice-proxy"
    }
 }
