@@ -18,7 +18,7 @@ node {
               sh "docker rmi -f parcelservice-proxy"
           }
           //Build new container with image parcelservice-proxy
-          sh "docker build -t parcelservice-proxy ."
+          sh "docker build -t parcelservice-proxy:test ."
       }
       else
       {
