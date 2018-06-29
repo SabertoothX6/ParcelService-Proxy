@@ -30,7 +30,7 @@ node {
    }
    stage('Deploy Image to Asset-Server')
    {
-      sh "docker save parcelservice-proxy > proxy.${currentBuild.number}.tar"
+      sh "docker save parcelservice-proxy:${currentBuild.number} > proxy.${currentBuild.number}.tar"
       sh "sshpass -p 'vagrant' scp -o StrictHostKeyChecking=no proxy.${currentBuild.number}.tar vagrant@192.168.56.100:/home/vagrant/images"
    }
    /*stage('Start LoadBalancer')
