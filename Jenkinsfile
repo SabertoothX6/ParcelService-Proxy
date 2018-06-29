@@ -18,13 +18,13 @@ node {
               sh "docker rmi -f parcelservice-proxy"
           }
           //Build new container with image parcelservice-proxy
-          sh "docker build -t parcelservice-proxy:test ."
+          sh "docker build -t parcelservice-proxy:${currentBuild.number} ."
       }
       else
       {
           //Remove the previous build image
           bat "docker rmi parcelservice-proxy"
-          bat "docker build -t parcelservice-proxy ."
+          bat "docker build -t parcelservice-proxy:${currentBuild.number} ."
       }
 
    }
