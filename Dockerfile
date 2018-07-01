@@ -10,6 +10,8 @@ RUN groupadd --system ${HAPROXY_USER} && \
 
 #copy the config into the container
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY proxyblue.cfg /usr/local/etc/haproxy/proxyblue.cfg
+COPY proxygreen.cfg /usr/local/etc/haproxy/proxygreen.cfg
 
 RUN mkdir -p /run/haproxy
 
