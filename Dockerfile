@@ -1,6 +1,7 @@
 #Get haproxy image
 FROM haproxy
 
+ENV STATE=haproxy
 ENV HAPROXY_USER haproxy
 
 RUN groupadd --system ${HAPROXY_USER} && \
@@ -15,7 +16,7 @@ COPY proxygreen.cfg /usr/local/etc/haproxy/proxygreen.cfg
 
 RUN mkdir -p /run/haproxy
 
-CMD ["haproxy", "-d", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
+CMD haproxy -db -f /usr/local/etc/haproxy/${STATE}.cfg
 
 #port opening
 EXPOSE 8443
