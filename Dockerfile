@@ -16,7 +16,7 @@ COPY proxygreen.cfg /usr/local/etc/haproxy/proxygreen.cfg
 
 RUN mkdir -p /run/haproxy
 
-CMD haproxy -db -f /usr/local/etc/haproxy/${STATE}.cfg
-
 #port opening
 EXPOSE 8443
+
+CMD haproxy -db -f /usr/local/etc/haproxy/${STATE}.cfg
